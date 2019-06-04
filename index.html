@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cristian Camargo</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Muli|Poppins|Raleway" rel="stylesheet"> 
+    </head>
+    <body>
+        <div class="bodyContainer">
+            <!-- Actual Content -->
+            <div class="contentContainer">
+
+                <!-- Greeting component -->
+                <div id="greetingComponent" class="greeting">
+                    <div class="greetingText">
+                            <h1>Hello, my name is <span class="redFont">Cristian</span>!</h1>
+                            <h1>I am a <span class="redFont">Software Engineer</span>.</h1>
+                    </div>
+                    <img class="poptart" src="poptart.jpg" />
+                </div>
+                <!-- <div id="greetingComponent" class="greeting">
+                    <h1>> echo <span class="redFont">$greeting</span></h1>
+                    <h1>Hello, my name is <span class="redFont">Cristian</span>!</h1>
+                    <h1>I am a <span class="redFont">Software Engineer</span>.</h1>
+                    <h1>>_</h1>
+                </div> -->
+                <!-- <div id="greetingComponent" class="greeting">
+                    <h1><span class="redFont">function</span>    greeting() {</h1>
+                    <h1 style="padding-left:1em">console.log(<span class="redFont">`</span></h1>
+                    <h1 style="padding-left:2em" class="redFont">Hello, my name is Cristian!</h1>
+                    <h1 style="padding-left:2em" class="redFont">I am a Software Engineer.</h1>
+                    <h1 style="padding-left:1em"><span class="redFont">`</span>)</h1>
+                    <h1>}</h1>
+                </div> -->
+
+                <!-- Experience component -->
+                <div id="experienceComponent" class="experience">
+                    <div class="experienceSelectorsContainer">
+                        <div class="expereinceSelectors">
+                            <div class="experienceSelector">
+                                <div class="experienceSelectorIcon1">
+                                </div>
+                                Professional
+                            </div>
+                            <div class="experienceSelector">
+                                <div class="experienceSelectorIcon2">
+                                </div>
+                                Academic
+                            </div>
+                            <div class="experienceSelector">
+                                <div class="experienceSelectorIcon3">
+                                </div>
+                                Personal
+                            </div>
+                            <div class="experienceSelector">
+                                <div class="experienceSelectorIcon4">
+                                </div>
+                                Life
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeLineContainer">
+                        <div class="timeLine">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio component -->
+                <div id="portfolioComponent" class="portfolio">
+                    <div class="project" id="treacherousAdventure">
+                        <div class="projectTitle">
+                            <img class="projectLogo" src="../unearthed.png">
+                            <h1 class="redFont">Treacherous Adventure</h1>
+                        </div>
+                        <div class="projectContent">
+                            <img class="projectImageVertical" src="taWebsite.jpg">
+                            <ul>
+                                <li>Built and launched the official <a class="redFont" target="_blank" href="http://TreacherousAdventure.com">Treacherouse Adventure website</a>!</li>
+                                <li>Used HTML, CSS, Javascript, and Bootstrap front-end framework.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project" id="smartParkDisney">
+                        <div class="projectTitle">
+                            <img class="projectLogo" src="../disney.png">
+                            <h1 class="redFont">Smart Park Disney</h1>
+                        </div>
+                        <div class="projectContent">
+                            <img class="projectImageVertical" src="plan_gen.png">
+                            <ul>
+                                <li>Individually developed an Android App available on the <a class="redFont" target="_blank" href="https://goo.gl/Zz9YZB ">play store</a>.</li>
+                                <li>Used Firebase and Google Directions API to design the Smart Plan feature which generates an optimized plan using fast passes, ride wait times, average wait times, and location.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project" id="vrcane">
+                        <div class="projectTitle">
+                            <img class="projectLogo" src="../vrcane.jpg">
+                            <h1 class="redFont">VRcane</h1>
+                        </div>
+                        <div class="projectContent">
+                            <img class="projectImageHorizontal" src="vrcane.PNG">
+                            <ul>
+                                <li>Developed a multiplayer virtual reality first person game for the Google Daydream Headset</li>
+                                <li>Worked in a team as algorithm specialist to design functions and optimize algorithms to have VRcane running properly and efficiently</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <i class="nextButton" width="50" height="50" data-feather="arrow-right-circle" onclick="NextProject()"></i>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebarContainer">
+                <div class="topBarContainer">
+                    <div id="greetingLink" class="sideTopNavigator" onclick="ChangeToComponent('greetingComponent')">
+                        <i class="icon" data-feather="smile"></i> Greeting
+                    </div>
+                    <div id="experienceLink" class="sideTopNavigator" onclick="ChangeToComponent('experienceComponent')">
+                        <i class="icon" data-feather="clock"></i> Experience
+                    </div>
+                    <div id="portfolioLink" class="sideTopNavigator" onclick="ChangeToComponent('portfolioComponent')">
+                        <i class="icon" data-feather="folder"></i> Portfolio
+                    </div>
+                    <div id="codeLink" class="sideTopNavigator">
+                        <i class="icon" data-feather="git-merge"></i> Code
+                    </div>
+                </div>
+                <div class="lowerBarContainer">
+                    <div class="sideBottomNavigator" onclick="window.location.href='mailto:ccamargo@ucsd.edu'">
+                        <i class="icon" data-feather="mail"></i>
+                    </div>
+                    <div class="sideBottomNavigator" onclick="window.location.href='tel:760-904-7513'">
+                        <i class="icon" data-feather="phone"></i>
+                    </div>
+                    <div class="sideBottomNavigator" onclick="window.open('https://www.linkedin.com/in/crcamargo/')">
+                        <i class="icon" data-feather="linkedin"></i>
+                    </div>
+                    <div class="sideBottomNavigator" onclick="window.open('https://www.twitter.com/phdeezy_')">
+                        <i class="icon" data-feather="twitter"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            feather.replace()
+            ChangeToComponent('experienceComponent')
+        </script>
+    </body>
+</html>
