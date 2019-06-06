@@ -16,25 +16,38 @@
                 <!-- Greeting component -->
                 <div id="greetingComponent" class="greeting">
                     <div class="greetingText">
-                            <h1>Hello, my name is <span class="redFont">Cristian</span>!</h1>
-                            <h1>I am a <span class="redFont">Software Engineer</span>.</h1>
+                            <h1>Hello, my name is <span class="primaryFontColor">Cristian</span>!</h1>
+                            <h1>I am a <span id="title" class="primaryFontColor">Software Engineer</span>.</h1>
                     </div>
-                    <img class="poptart" src="media/poptart.jpg" />
+                    <i class="colorSwitchIcon primaryFontColor" onclick="OpenCloseColorSchemas()" data-feather="droplet"></i>
+                    <div class="colorSwitchContainer">
+                        <div class="colorSwitch" onclick="ChangeColorSchema('default')">
+                            <div class="colorSwabs">
+                                <div class="colorSwab" style="background-color: #BA5B50"></div>
+                                <div class="colorSwab" style="background-color: #F0E5DD"></div>
+                                <div class="colorSwab" style="background-color: #D1CEBE"></div>
+                            </div>
+                            Red
+                        </div>
+                        <div class="colorSwitch" onclick="ChangeColorSchema('blue')">
+                            <div class="colorSwabs">
+                                <div class="colorSwab" style="background-color: #435892"></div>
+                                <div class="colorSwab" style="background-color: #F0E5DD"></div>
+                                <div class="colorSwab" style="background-color: #BCAA8A"></div>
+                            </div>
+                            Blue
+                        </div>
+                        <div class="colorSwitch" onclick="ChangeColorSchema('green')">
+                                <div class="colorSwabs">
+                                    <div class="colorSwab" style="background-color: #8DA077"></div>
+                                    <div class="colorSwab" style="background-color: #F0E5DD"></div>
+                                    <div class="colorSwab" style="background-color: #BABAAB"></div>
+                                </div>
+                                Green
+                            </div>
+                    </div>
+                    <img class="poptart" src="media/poptart.jpg" onclick="ChangeColorSchema('blue')"/>
                 </div>
-                <!-- <div id="greetingComponent" class="greeting">
-                    <h1>> echo <span class="redFont">$greeting</span></h1>
-                    <h1>Hello, my name is <span class="redFont">Cristian</span>!</h1>
-                    <h1>I am a <span class="redFont">Software Engineer</span>.</h1>
-                    <h1>>_</h1>
-                </div> -->
-                <!-- <div id="greetingComponent" class="greeting">
-                    <h1><span class="redFont">function</span>    greeting() {</h1>
-                    <h1 style="padding-left:1em">console.log(<span class="redFont">`</span></h1>
-                    <h1 style="padding-left:2em" class="redFont">Hello, my name is Cristian!</h1>
-                    <h1 style="padding-left:2em" class="redFont">I am a Software Engineer.</h1>
-                    <h1 style="padding-left:1em"><span class="redFont">`</span>)</h1>
-                    <h1>}</h1>
-                </div> -->
 
                 <!-- Experience component -->
                 <div id="experienceComponent" class="experience">
@@ -73,12 +86,12 @@
                     <div class="project" id="treacherousAdventure">
                         <div class="projectTitle">
                             <img class="projectLogo" src="media//unearthed.png">
-                            <h1 class="redFont">Treacherous Adventure</h1>
+                            <h1 class="primaryFontColor">Treacherous Adventure</h1>
                         </div>
                         <div class="projectContent">
                             <img class="projectImageVertical" src="media/taWebsite.jpg">
                             <ul>
-                                <li>Built and launched the official <a class="redFont" target="_blank" href="http://TreacherousAdventure.com">Treacherouse Adventure website</a>!</li>
+                                <li>Built and launched the official <a class="primaryFontColor" target="_blank" href="http://TreacherousAdventure.com">Treacherouse Adventure website</a>!</li>
                                 <li>Used HTML, CSS, Javascript, and Bootstrap front-end framework.</li>
                             </ul>
                         </div>
@@ -86,12 +99,12 @@
                     <div class="project" id="smartParkDisney">
                         <div class="projectTitle">
                             <img class="projectLogo" src="media//disney.png">
-                            <h1 class="redFont">Smart Park Disney</h1>
+                            <h1 class="primaryFontColor">Smart Park Disney</h1>
                         </div>
                         <div class="projectContent">
                             <img class="projectImageVertical" src="media/plan_gen.png">
                             <ul>
-                                <li>Individually developed an Android App available on the <a class="redFont" target="_blank" href="https://goo.gl/Zz9YZB ">play store</a>.</li>
+                                <li>Individually developed an Android App available on the <a class="primaryFontColor" target="_blank" href="https://goo.gl/Zz9YZB ">play store</a>.</li>
                                 <li>Used Firebase and Google Directions API to design the Smart Plan feature which generates an optimized plan using fast passes, ride wait times, average wait times, and location.</li>
                             </ul>
                         </div>
@@ -99,7 +112,7 @@
                     <div class="project" id="vrcane">
                         <div class="projectTitle">
                             <img class="projectLogo" src="media/vrcane.jpg">
-                            <h1 class="redFont">VRcane</h1>
+                            <h1 class="primaryFontColor">VRcane</h1>
                         </div>
                         <div class="projectContent">
                             <img class="projectImageHorizontal" src="media/vrcane.PNG">
@@ -130,16 +143,16 @@
                     </div>
                 </div>
                 <div class="lowerBarContainer">
-                    <div class="sideBottomNavigator" onclick="window.location.href='mailto:ccamargo@ucsd.edu'">
+                    <div class="sideBottomNavigator primaryFontColor" onclick="window.location.href='mailto:ccamargo@ucsd.edu'">
                         <i class="icon" data-feather="mail"></i>
                     </div>
-                    <div class="sideBottomNavigator" onclick="window.location.href='tel:760-904-7513'">
+                    <div class="sideBottomNavigator primaryFontColor" onclick="window.location.href='tel:760-904-7513'">
                         <i class="icon" data-feather="phone"></i>
                     </div>
-                    <div class="sideBottomNavigator" onclick="window.open('https://www.linkedin.com/in/crcamargo/')">
+                    <div class="sideBottomNavigator primaryFontColor" onclick="window.open('https://www.linkedin.com/in/crcamargo/')">
                         <i class="icon" data-feather="linkedin"></i>
                     </div>
-                    <div class="sideBottomNavigator" onclick="window.open('https://www.twitter.com/phdeezy_')">
+                    <div class="sideBottomNavigator primaryFontColor" onclick="window.open('https://www.twitter.com/phdeezy_')">
                         <i class="icon" data-feather="twitter"></i>
                     </div>
                 </div>
@@ -147,7 +160,8 @@
         </div>
         <script>
             feather.replace()
-            ChangeToComponent('experienceComponent')
+            //ChangeToComponent('experienceComponent')
+            window.setInterval(() => CycleTitle(), 2000)
         </script>
     </body>
 </html>
