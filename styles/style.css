@@ -61,7 +61,6 @@ a {
     bottom: 0;
     margin: 3%;
     width: 10%;
-    height: 25%;
     background-color: #F7F2E5;
     flex-direction: column;
     justify-content: flex-start;
@@ -89,6 +88,13 @@ a {
 .colorSwab {
     width: 10px;
     height: 10px;
+}
+
+.colorInput {
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid #212121;
+    background-color: inherit;
 }
 
 .sideTopNavigator {
@@ -333,8 +339,9 @@ a {
 }
 
 .nextButton {
+    position: absolute;
+    right: 0;
     color: black;
-    height: 100%;
     cursor: pointer;
 }
 

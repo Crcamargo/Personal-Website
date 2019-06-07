@@ -45,15 +45,15 @@ function ChangeToComponent(activeId) {
     if (activeId == currentComponent) return
     AnimateComponents(currentComponent, activeId)
     document.getElementById(linkMappings[activeId]).style.color = getComputedStyle(document.documentElement).getPropertyValue("--secondary-color")
-    document.getElementById(linkMappings[currentComponent]).style.color = "black"
+    document.getElementById(linkMappings[currentComponent]).style.color = null
+    currentComponent = activeId
 }
 
 function AnimateComponents(outComp, inComp) {
-    TweenMax.to("#"+outComp, 1, {left: "-100vw", onComplete: () => {
-        TweenMax.fromTo("#"+inComp, .1, {display: "none", opacity: 0}, {display: "flex", opacity: 1})
+    console.log("Ainmation: In - " + inComp + " Out - " + outComp)
+    TweenMax.to("#"+outComp, .5, {opacity: "0", onComplete: () => {
         document.getElementById(outComp).style.display = "none"
-        document.getElementById(outComp).style.left = "0"
-        currentComponent = inComp
+        TweenMax.fromTo("#"+inComp, .5, {display: "none", opacity: 0}, {display: "flex", opacity: 1})
     }})
 }
 
@@ -63,19 +63,19 @@ function NextProject() {
     if (nextProjectIndex >= projects.length) {
         nextProjectIndex = 0
     }
-
     var nextProjectId = projects[nextProjectIndex]
+    AnimateComponents(currentProject, nextProjectId)
 
-    // Make next project visible
-    projects.forEach(id => {
-        var element = document.getElementById(id)
-        if (id === nextProjectId) {
-            element.style.display = "flex"
-        }
-        else {
-            element.style.display = "none"
-        }
-    })
+    // // Make next project visible
+    // projects.forEach(id => {
+    //     var element = document.getElementById(id)
+    //     if (id === nextProjectId) {
+    //         element.style.display = "flex"
+    //     }
+    //     else {
+    //         element.style.display = "none"
+    //     }
+    // })
 
     // Update current project
     currentProject = nextProjectId
@@ -90,6 +90,20 @@ function OpenCloseColorSchemas() {
     else {
         document.getElementsByClassName('colorSwitchContainer').item(0).style.display = "flex"
     }
+}
+
+function AddCutomColorSchema() {
+    // Get custom colors from input
+    var primary = document.getElementById('customPrimary').value
+    var secondary = document.getElementById('customSecondary').value
+    var tertiary = document.getElementById('customTertiary').value
+    colorSchemes['custom']  = {
+        "primary": primary,
+        "secondary": secondary,
+        "tertiary": tertiary
+    }
+
+    ChangeColorSchema('custom')
 }
 
 function ChangeColorSchema(schema) {
