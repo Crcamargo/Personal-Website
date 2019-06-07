@@ -50,6 +50,7 @@ a {
     left: 0;
     bottom: 0;
     margin: 1%;
+    z-index: 2;
 }
 
 .colorSwitchContainer {
@@ -65,6 +66,7 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    z-index: 1;
 }
 
 .colorSwitch {
@@ -131,9 +133,10 @@ a {
 }
 
 .greeting {
-    display: none;
+    position: relative;
+    display: flex;
     max-height: 100%;
-    max-width: 100%;
+    width: 100%;
     align-items: center;
 }
 
@@ -155,9 +158,10 @@ a {
 }
 
 .experience {
+    position: relative;
     padding: 5%;
     padding-top: 2%;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 90%;
     height: 100%;
@@ -237,11 +241,13 @@ a {
 
 .timeLine {
     flex-grow: 1;
-    background-color: pink;
+    background-color: grey;
+    border-radius: 10px;
     height: 10px;
 }
 
 .portfolio {
+    position: relative;
     max-height: 80%;
     margin: 5%;
     width: 90%;

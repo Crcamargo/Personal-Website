@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <script src="https://unpkg.com/feather-icons"></script>
         <script src="scripts/script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
         <link rel="stylesheet" href="styles/style.css">
         <link href="https://fonts.googleapis.com/css?family=Muli|Poppins|Raleway" rel="stylesheet"> 
     </head>
@@ -12,39 +13,38 @@
         <div class="bodyContainer">
             <!-- Actual Content -->
             <div class="contentContainer">
-
+                <i class="colorSwitchIcon primaryFontColor" onclick="OpenCloseColorSchemas()" data-feather="droplet"></i>
+                <div class="colorSwitchContainer">
+                    <div class="colorSwitch" onclick="ChangeColorSchema('default')">
+                        <div class="colorSwabs">
+                            <div class="colorSwab" style="background-color: #BA5B50"></div>
+                            <div class="colorSwab" style="background-color: #F0E5DD"></div>
+                            <div class="colorSwab" style="background-color: #D1CEBE"></div>
+                        </div>
+                        Red
+                    </div>
+                    <div class="colorSwitch" onclick="ChangeColorSchema('blue')">
+                        <div class="colorSwabs">
+                            <div class="colorSwab" style="background-color: #435892"></div>
+                            <div class="colorSwab" style="background-color: #F0E5DD"></div>
+                            <div class="colorSwab" style="background-color: #BCAA8A"></div>
+                        </div>
+                        Blue
+                    </div>
+                    <div class="colorSwitch" onclick="ChangeColorSchema('green')">
+                            <div class="colorSwabs">
+                                <div class="colorSwab" style="background-color: #8DA077"></div>
+                                <div class="colorSwab" style="background-color: #F0E5DD"></div>
+                                <div class="colorSwab" style="background-color: #BABAAB"></div>
+                            </div>
+                            Green
+                    </div>
+                </div>
                 <!-- Greeting component -->
                 <div id="greetingComponent" class="greeting">
                     <div class="greetingText">
                             <h1>Hello, my name is <span class="primaryFontColor">Cristian</span>!</h1>
-                            <h1>I am a <span id="title" class="primaryFontColor">Software Engineer</span>.</h1>
-                    </div>
-                    <i class="colorSwitchIcon primaryFontColor" onclick="OpenCloseColorSchemas()" data-feather="droplet"></i>
-                    <div class="colorSwitchContainer">
-                        <div class="colorSwitch" onclick="ChangeColorSchema('default')">
-                            <div class="colorSwabs">
-                                <div class="colorSwab" style="background-color: #BA5B50"></div>
-                                <div class="colorSwab" style="background-color: #F0E5DD"></div>
-                                <div class="colorSwab" style="background-color: #D1CEBE"></div>
-                            </div>
-                            Red
-                        </div>
-                        <div class="colorSwitch" onclick="ChangeColorSchema('blue')">
-                            <div class="colorSwabs">
-                                <div class="colorSwab" style="background-color: #435892"></div>
-                                <div class="colorSwab" style="background-color: #F0E5DD"></div>
-                                <div class="colorSwab" style="background-color: #BCAA8A"></div>
-                            </div>
-                            Blue
-                        </div>
-                        <div class="colorSwitch" onclick="ChangeColorSchema('green')">
-                                <div class="colorSwabs">
-                                    <div class="colorSwab" style="background-color: #8DA077"></div>
-                                    <div class="colorSwab" style="background-color: #F0E5DD"></div>
-                                    <div class="colorSwab" style="background-color: #BABAAB"></div>
-                                </div>
-                                Green
-                            </div>
+                            <h1>I am a <span id="title" class="primaryFontColor">Software Engineer</span></h1>
                     </div>
                     <img class="poptart" src="media/poptart.jpg" onclick="ChangeColorSchema('blue')"/>
                 </div>
@@ -129,7 +129,7 @@
             <!-- Sidebar -->
             <div class="sidebarContainer">
                 <div class="topBarContainer">
-                    <div id="greetingLink" class="sideTopNavigator" onclick="ChangeToComponent('greetingComponent')">
+                    <div id="greetingLink" class="sideTopNavigator secondaryFontColor" onclick="ChangeToComponent('greetingComponent')">
                         <i class="icon" data-feather="smile"></i> Greeting
                     </div>
                     <div id="experienceLink" class="sideTopNavigator" onclick="ChangeToComponent('experienceComponent')">
@@ -160,8 +160,7 @@
         </div>
         <script>
             feather.replace()
-            //ChangeToComponent('experienceComponent')
-            window.setInterval(() => CycleTitle(), 2000)
+            window.setInterval(() => CycleTitle(), 3000)
         </script>
     </body>
 </html>

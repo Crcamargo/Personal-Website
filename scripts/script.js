@@ -1,9 +1,5 @@
 // Main components used to know which to turn on/off
-var mainComponents = [
-    "greetingComponent",
-    "experienceComponent",
-    "portfolioComponent"
-]
+var currentComponent = "greetingComponent";
 
 var linkMappings = {
     "greetingComponent": "greetingLink",
@@ -38,36 +34,27 @@ var colorSchemes = {
 }
 
 var titles = [
-    "Software Engineer",
     "Data Engineer",
-    "Full Stack Engineer",
-    "Web Engineer",
-    "Mobile Engineer"
+    "Full Stack Developer",
+    "Web Designer",
+    "Mobile Developer",
+    "Software Engineer",
 ]
 
 function ChangeToComponent(activeId) {
-    // Hide/show components
-    mainComponents.forEach(id => {
-        var element = document.getElementById(id)
-        if (id === activeId) {
-            element.style.display = "flex"
-        }
-        else {
-            element.style.display = "none"
-        }
-    })
+    if (activeId == currentComponent) return
+    AnimateComponents(currentComponent, activeId)
+    document.getElementById(linkMappings[activeId]).style.color = getComputedStyle(document.documentElement).getPropertyValue("--secondary-color")
+    document.getElementById(linkMappings[currentComponent]).style.color = "black"
+}
 
-    // Change active colors
-    var activeLinkId = linkMappings[activeId]
-    Object.keys(linkMappings).forEach(componentId => {
-        var linkElement = document.getElementById(linkMappings[componentId])
-        if (linkMappings[componentId] === activeLinkId) {
-            linkElement.style.color = "#F0E5DD"
-        }
-        else {
-            linkElement.style.color = ""
-        }
-    })
+function AnimateComponents(outComp, inComp) {
+    TweenMax.to("#"+outComp, 1, {left: "-100vw", onComplete: () => {
+        TweenMax.fromTo("#"+inComp, .1, {display: "none", opacity: 0}, {display: "flex", opacity: 1})
+        document.getElementById(outComp).style.display = "none"
+        document.getElementById(outComp).style.left = "0"
+        currentComponent = inComp
+    }})
 }
 
 function NextProject() {
@@ -119,5 +106,8 @@ function CycleTitle() {
     title = titles[0]
     titles = titles.slice(1, titles.length)
     titles.push(title)
-    document.getElementById("title").textContent = title
+    TweenMax.to("#title", 1, {opacity:0, onComplete: (() => {
+        document.getElementById("title").textContent = title
+        TweenMax.to("#title", 1, {opacity:1})
+    })})
 }
