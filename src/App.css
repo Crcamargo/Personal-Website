@@ -136,15 +136,14 @@ h2 {
 .home-text-text-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .home-resume-button-container {
+    width: 80%;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 30%;
 }
 
 .home-resume-button-container:hover {

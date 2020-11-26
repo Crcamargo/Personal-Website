@@ -14,7 +14,8 @@ const Home = ({ pageClick, show }) => (
         <h2>I am a <span className="primary-color">Software Engineer</span>.</h2>
       </div>
       <div onClick={() => pageClick('resume')} className="home-resume-button-container">
-        <Download className="icon" size={30}/> <h2>Resume</h2>
+        <Download className="icon" size={30}/>
+        <h2>Resume</h2>
       </div>
       {/* <button onClick={() => store.dispatch(setPrimaryColor("#BA5B50"))}>Red</button>
       <button onClick={() => store.dispatch(setPrimaryColor("#435892"))}>Blue</button>
