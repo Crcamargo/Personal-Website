@@ -23,6 +23,7 @@
 html {
     width: 100%;
     height: 100%;
+    background-color: var(--secondary-color);
 }
 
 body { 
@@ -165,6 +166,11 @@ h2 {
 
 .experience-timeline-element {
     margin: 1em !important;
+}
+
+.experience-element-title:hover {
+    cursor: pointer;
+    color: var(--primary-color);
 }
 
 .projects-container {
