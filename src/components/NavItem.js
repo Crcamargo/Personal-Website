@@ -1,7 +1,7 @@
 import React from 'react'
-import { navigateToGreeting, navigateToExperience, navigateToProjects, navigateToAnalytics, pageClick } from '../redux/actions'
+import { navigateToGreeting, navigateToExperience, navigateToProjects, navigateToAnalytics, pageClick, navigateToAbout, navigateToResume } from '../redux/actions'
 import { connect } from 'react-redux'
-import { Home, Clock, GitMerge, PieChart } from 'react-feather'
+import { Home, Clock, GitMerge, PieChart, User, Feather } from 'react-feather'
 
 const couple = (navigate, type, clickEvent) => {
   if (navigate) {
@@ -68,7 +68,31 @@ const analyticDispatch = {
   clickEvent: pageClick
 }
 
+const aboutProps = (state) => ({
+  Icon: User,
+  text: 'About',
+  type: 'about'
+})
+
+const aboutDispatch = {
+  navigate: navigateToAbout,
+  clickEvent: pageClick
+}
+
+const resumeProps = (state) => ({
+  Icon: Feather,
+  text: 'Resume',
+  type: 'resume-nav'
+})
+
+const resumeDispatch = {
+  navigate: navigateToResume,
+  clickEvent: pageClick
+}
+
 export const GreetingNavItem =  connect(greetingProps , greetingDispatch)(NavItem)
 export const ExperienceNavItem =  connect(experienceProps, experienceDispatch)(NavItem)
 export const ProjectsNavItem =  connect(projectsProps, projectsDispatch)(NavItem)
 export const AnalyticsNavItem = connect(analyticsProps, analyticDispatch)(NavItem)
+export const AboutNavItem = connect(aboutProps, aboutDispatch)(NavItem)
+export const ResumeNavItem = connect(resumeProps, resumeDispatch)(NavItem)

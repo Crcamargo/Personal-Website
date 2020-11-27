@@ -1,5 +1,5 @@
 import {
-  SET_TAB, SET_PRIMARY_COLOR, PAGE_VIEW, PAGE_CLICK
+  SET_TAB, SET_PRIMARY_COLOR, PAGE_VIEW, PAGE_CLICK, SET_HOME
 } from './actions'
 
 import { combineReducers } from 'redux'
@@ -16,6 +16,11 @@ export const stateReducer = (state = defaultState, action) => {
       return {
         ...state,
         tab: action.tab
+      }
+    case SET_HOME:
+      return {
+        ...state,
+        home: action.home
       }
     case SET_PRIMARY_COLOR:
       return {
