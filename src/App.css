@@ -243,8 +243,8 @@ h2 {
 
 .project-logo {
     border-radius: 10px;
-    width: 100px;
-    height: 100px;
+    width: 7vw;
+    height: 7vw;
 }
 
 .project-title {
@@ -258,12 +258,12 @@ h2 {
 }
 
 .project-image-vertical {
-    height: 70vh;
+    height: 65vh;
     border-radius: 10px;
 }
 
 .project-image-horizontal {
-    width: 45vw;
+    width: 35vw;
     border-radius: 10px;
 }
 

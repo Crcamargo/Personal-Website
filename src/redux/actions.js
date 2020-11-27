@@ -37,5 +37,6 @@ export const navigateToGreeting = () => setTab("greeting")
 export const navigateToExperience = () => setTab("experience")
 export const navigateToProjects = () => setTab("projects")
 export const navigateToAnalytics = () => setTab("analytics")
+
 export const navigateToAbout = () => setHome("about")
 export const navigateToResume = () => setHome("resume")

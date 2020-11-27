@@ -15,20 +15,25 @@ import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 const projects = [
   {
     name: "This Website!",
+    url: "https://github.com/Crcamargo/Personal-Website",
     logo: WebLogo,
     image: WebImage,
     imageOrientation: 'horizontal',
     bullets: [
-      "This website was built using React and Redux!"
+      "This website was built using React and Redux (You can check the console for state updates)!",
+      "Page clicks and views are being tracked and sent to back end for analytics. (WIP)",
+      "A/B testing on website color schemes. (WIP)"
     ]
   },
   {
-    name: "FellowshipIt",
+    name: "FellowshipIt (WIP)",
     logo: WebLogo,
     image: FitImage,
     imageOrientation: 'horizontal',
     bullets: [
-      "This website was built using React and Redux!"
+      "Creating a faith based app that allows small groups to better connect.",
+      "App built in React Native with Firebase as its data store.",
+      "Backend written in C#/.NET to controll permissions, data retrieval, and search."
     ]
   },
   {
@@ -37,7 +42,7 @@ const projects = [
     image: DisneyImage,
     imageOrientation: 'vertical',
     bullets: [
-      "Individually developed an Android App available on the play store.",
+      "Individually developed an Android App that was available on the play store.",
       `Used Firebase and Google Directions API to design the Smart Plan feature which generates an optimized plan using
       fast passes, ride wait times, average wait times, and location.`
     ],
