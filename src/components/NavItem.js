@@ -1,7 +1,7 @@
 import React from 'react'
 import { navigateToGreeting, navigateToExperience, navigateToProjects, navigateToAnalytics, pageClick } from '../redux/actions'
 import { connect } from 'react-redux'
-import { Home, Clock, GitMerge, PieChart, Feather } from 'react-feather'
+import { Home, Clock, GitMerge, PieChart } from 'react-feather'
 
 const couple = (navigate, type, clickEvent) => {
   if (navigate) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PieChart, Pie, Cell, LabelList, Tooltip} from 'recharts'
+import { PieChart, Pie, Cell, Tooltip } from 'recharts'
 import { connect } from 'react-redux'
 
 const maxNavRows = 10

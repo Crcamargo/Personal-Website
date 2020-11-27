@@ -2,7 +2,7 @@ import React from 'react'
 import NavBarNavigation from './NavBarNavigation'
 import NavBarContact from './NavBarContact'
 
-export default ({ }) => (
+export default () => (
   <div className="nav-bar-container">
     <NavBarNavigation />
     <NavBarContact />

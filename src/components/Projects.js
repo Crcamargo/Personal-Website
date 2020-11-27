@@ -66,7 +66,7 @@ const projects = [
   }
 ]
 
-const Projects = ({}) => {
+const Projects = () => {
   const [index, setIndex] = useState(0)
   const next = () => {
     let i = index + 1

@@ -7,7 +7,7 @@ import {
   AnalyticsNavItem
 } from './NavItem'
 
-export default ({ }) => (
+export default () => (
   <div className="nav-bar-navigation-container">
     <GreetingNavItem />
     <ExperienceNavItem />

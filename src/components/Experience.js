@@ -7,12 +7,10 @@ const contentStyle = { background: 'var(--secondary-color)', boxShadow: 'none'}
 const contentArrowStyle = { border: 'none'}
 const iconStyle = { background: 'var(--primary-color)', boxShadow: 'none', color: '#fff' }
 
-
-
 export default () => {
   const [curr, setCurr] = useState(0)
 
-  const shouldShowContent = index => index == curr
+  const shouldShowContent = index => index === curr
 
   return(
   <div className="experience-container">
