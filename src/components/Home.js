@@ -1,5 +1,6 @@
 import React from 'react'
 import Photo from '../assets/photo.jpg'
+import Resume from '../Temp.pdf'
 import { Download } from 'react-feather'
 import store from '../redux/store'
 import { setPrimaryColor } from '../redux/actions'
@@ -18,6 +19,16 @@ volutpat lobortis dolor. Sed volutpat, ex nec ornare dignissim, purus eros luctu
 felis sit amet diam. Donec sed dolor sapien. Sed sit amet leo ligula.
 `
 
+const downloadResume = (dispatch) => {
+  dispatch('resume')
+
+  let a = document.createElement('a')
+
+  a.href = Resume
+  a.target ="_blank"
+  a.click()
+}
+
 const Home = ({ pageClick, showAbout }) => (
   <div className="home-container">
     {
@@ -35,7 +46,7 @@ const Home = ({ pageClick, showAbout }) => (
           <h1 className="hello">Hello, my name is <span className="primary-color">Cristian</span>!</h1>
           <h2>I am a <span className="primary-color">Software Engineer</span>.</h2>
         </div>
-        <div onClick={() => pageClick('resume')} className="home-resume-button-container">
+        <div onClick={() => downloadResume(pageClick)} className="home-resume-button-container">
           <Download className="icon" size={30}/>
           <h2>Resume</h2>
         </div>
