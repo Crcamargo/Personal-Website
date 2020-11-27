@@ -14,8 +14,8 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
+      <Main />
         <NavBar />
-        <Main />
       </div>
     </Provider>
   );

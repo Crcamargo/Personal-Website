@@ -62,9 +62,7 @@ h2 {
     width: 15vw;
     display: flex;
     flex-direction: column;
-    position: fixed;
     height: 100vh;
-    right: 0;
 }
 
 .nav-bar-navigation-container { 
@@ -111,7 +109,7 @@ h2 {
 }
 
 .main-container { 
-    width: 85vw;
+    flex: 1;
     max-height: 100%;
 }
 
@@ -202,8 +200,8 @@ h2 {
 }
 
 .project-container {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 12%;
+    padding-right: 12%;
 }
 
 .project-header {
