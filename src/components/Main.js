@@ -5,6 +5,7 @@ import Experience from './Experience'
 import Projects from './Projects'
 import Analytics from './Analytics'
 import Constants from '../Constants'
+import { Switch, Route } from   'react-router-dom'
 
 const Main = ({ tab }) => {
   let comp = undefined
@@ -32,7 +33,17 @@ const Main = ({ tab }) => {
 
   return(
     <div className='main-container'>
-      {comp}
+      <Switch>
+        <Route path="/experience">
+          <Experience />
+        </Route>
+        <Route path="/projects">
+          <Projects />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import {
   GreetingNavItem,
@@ -10,18 +9,16 @@ import {
   ResumeNavItem
 } from './NavItem'
 
-const NavBarNavigation = ({ showAbout }) => (
+import { useLocation } from 'react-router-dom'
+
+export default () => (
   <div className="nav-bar-navigation-container">
-    <GreetingNavItem />
-    { showAbout ? <AboutNavItem /> : <ResumeNavItem />}
-    <ExperienceNavItem />
-    <ProjectsNavItem />
-    {/* <AnalyticsNavItem /> */}
+      <GreetingNavItem />
+      { useLocation().pathname !== '/about' ? <AboutNavItem /> :
+                    <ResumeNavItem />
+      }
+      <ExperienceNavItem />
+      <ProjectsNavItem />
+      {/* <AnalyticsNavItem /> */}
   </div>
 )
-
-const mapStateToProps = (state) => ({
-  showAbout: state.current.home === 'resume'
-})
-
-export default connect(mapStateToProps)(NavBarNavigation)

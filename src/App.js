@@ -9,14 +9,20 @@ import { pageView } from './redux/actions'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
 
+import {
+  BrowserRouter as Router,
+} from "react-router-dom"
+
 function App() {
   store.dispatch(pageView())
   return (
     <Provider store={store}>
-      <div className="App">
-      <Main />
-        <NavBar />
-      </div>
+      <Router>
+        <div className="App">
+          <Main />
+          <NavBar />
+        </div>
+      </Router>
     </Provider>
   );
 }

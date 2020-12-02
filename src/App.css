@@ -99,7 +99,16 @@ h2 {
 }
 
 .icon { 
-    margin-right: 10%;
+    margin-right: 8%;
+}
+
+.link {
+    text-decoration: inherit;
+    color: inherit;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .nav-item:hover {

@@ -6,6 +6,7 @@ import store from '../redux/store'
 import { setPrimaryColor } from '../redux/actions'
 import { connect } from 'react-redux'
 import { pageClick } from '../redux/actions'
+import { useLocation } from 'react-router-dom'
 
 const aboutText = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet pharetra metus, nec mollis tortor.
@@ -29,10 +30,10 @@ const downloadResume = (dispatch) => {
   a.click()
 }
 
-const Home = ({ pageClick, showAbout }) => (
+const Home = ({ pageClick }) => (
   <div className="home-container">
     {
-      showAbout ?
+      useLocation().pathname === "/about" ?
         <div className="home-about-container">
           <h1 className="about-me">About Me</h1>
           <h2 className="name">Cristian Camargo</h2>
@@ -63,10 +64,4 @@ const mapDispatchToProps = {
   pageClick
 }
 
-const mapStateToProps = (state) => {
-  return {
-    showAbout: state.current.home === 'about'
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(null, mapDispatchToProps)(Home)
