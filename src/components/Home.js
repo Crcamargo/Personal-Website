@@ -1,12 +1,12 @@
 import React from 'react'
 import Photo from '../assets/photo.jpg'
 import Resume from '../Temp.pdf'
-import { Download } from 'react-feather'
+import { Download,Info } from 'react-feather'
 import store from '../redux/store'
 import { setPrimaryColor } from '../redux/actions'
 import { connect } from 'react-redux'
 import { pageClick } from '../redux/actions'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 
 const aboutText = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet pharetra metus, nec mollis tortor.
@@ -30,6 +30,8 @@ const downloadResume = (dispatch) => {
   a.click()
 }
 
+const isMobile = () => window.matchMedia('(max-width: 769px)').matches
+
 const Home = ({ pageClick }) => (
   <div className="home-container">
     {
@@ -47,6 +49,15 @@ const Home = ({ pageClick }) => (
           <h1 className="hello">Hello, my name is <span className="primary-color">Cristian</span>!</h1>
           <h2>I am a <span className="primary-color">Software Engineer</span>.</h2>
         </div>
+        {
+          !isMobile() ? null :
+            <Link to="about" className="link">
+              <div className="home-resume-button-container">
+                <Info className="icon" size={30} />
+                <h2>About</h2>
+              </div>
+            </Link>
+        }
         <div onClick={() => downloadResume(pageClick)} className="home-resume-button-container">
           <Download className="icon" size={30}/>
           <h2>Resume</h2>

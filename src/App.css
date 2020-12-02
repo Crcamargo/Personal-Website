@@ -82,6 +82,12 @@ h2 {
     height: 100vh;
 }
 
+@media only screen and (max-width: 768px) {
+    .nav-bar-container {
+        display: none;
+    }
+}
+
 .nav-bar-navigation-container { 
     display: flex;
     flex-direction: column;
@@ -177,6 +183,40 @@ h2 {
 
 .home-photo {
     height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --primary-color: white;
+    }
+    .home-photo {
+        display: none;
+    }
+
+    html {
+        min-height: 100vh;
+      }
+
+    .home-container {
+        background-image: url('./assets/photo.jpg');
+        color: white;
+        background-position: center;
+    }
+
+    .home-text-container {
+        background-color: rgba(0,0,0,.4);
+        border-radius: 10px;
+    }
+
+    .home-about-container {
+        background-color: rgba(0,0,0,.4);
+        border-radius: 10px;
+        padding: 3%;
+    }
+
+    .home-resume-button-container {
+        width: 100%;
+    }
 }
 
 .home-about-container {
