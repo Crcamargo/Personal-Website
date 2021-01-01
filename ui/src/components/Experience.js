@@ -32,17 +32,28 @@ export default () => {
               (<div className="vertical-timeline-bullets">
                 <ul>
                   <li>
-                    Enabled data scientists to quickly go from scratch research note-book work to deployable, production level code.
+                    AI/ML Team
+                    <ul>
+                      <li>
+                      Enabled data scientists to quickly go from scratch research note-book work to deployable, production level code.
+                      </li>
+                      <li>
+                        Developed streaming and batch processing systems to provide data for analysis.
+                      </li>
+                      <li>
+                        Created Seismic's internal A/B Testing Experimental Framework.
+                      </li>
+                      <li>
+                        Developed production content recommendation system. Worked with data scientists to create
+                        recommenders such as 'Popular' and 'Engaging' content.
+                      </li>
+                    </ul>
                   </li>
                   <li>
-                    Developed streaming and batch processing systems to provide data for analysis.
-                  </li>
-                  <li>
-                    Created Seismic's internal A/B Testing Experimental Framework.
-                  </li>
-                  <li>
-                    Developed production content recommendation system. Worked with data scientists to create
-                    recommenders such as 'Popular' and 'Engaging' content.
+                    CRM Services Team
+                    <ul>
+                      <li>First</li>
+                    </ul>
                   </li>
                 </ul>
               </div>) : null

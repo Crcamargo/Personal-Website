@@ -25,17 +25,17 @@ const projects = [
       "A/B testing on website color schemes. (WIP)"
     ]
   },
-  {
-    name: "FellowshipIt (WIP)",
-    logo: WebLogo,
-    image: FitImage,
-    imageOrientation: 'horizontal',
-    bullets: [
-      "Creating a faith based app that allows small groups to better connect.",
-      "App built in React Native with Firebase as its data store.",
-      "Backend written in C#/.NET to controll permissions, data retrieval, and search."
-    ]
-  },
+  // {
+  //   name: "FellowshipIt (WIP)",
+  //   logo: WebLogo,
+  //   image: FitImage,
+  //   imageOrientation: 'horizontal',
+  //   bullets: [
+  //     "Creating a faith based app that allows small groups to better connect.",
+  //     "App built in React Native with Firebase as its data store.",
+  //     "Backend written in C#/.NET to controll permissions, data retrieval, and search."
+  //   ]
+  // },
   {
     name: "Smart Park Disney",
     logo: DisneyLogo,

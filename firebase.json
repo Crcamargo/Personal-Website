@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "ui/build",
+    "rewrites": [ {
+      "source": "**",
+      "function": "app"
+    } ]
+  },
+  "functions": {
+  }
+}

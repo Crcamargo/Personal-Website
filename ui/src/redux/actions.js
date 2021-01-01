@@ -17,6 +17,7 @@ export const setPrimaryColor = (color) => ({ type: SET_PRIMARY_COLOR, color })
 export const pageView = () => ({
   type: PAGE_VIEW,
   event: {
+    eventType: "page-view",
     ...getEventBase()
   }
 })
@@ -24,6 +25,7 @@ export const pageView = () => ({
 export const pageClick = (item) => ({
   type: PAGE_CLICK,
   event: {
+    eventType: "page-click",
     itemClicked: item,
     ...getEventBase()
   }

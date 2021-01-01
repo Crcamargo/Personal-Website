@@ -36,3 +36,6 @@ packages/react-devtools-extensions/.tempUserDataDir
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
 packages/react-devtools-scheduling-profiler/dist
+
+.firebase
+cristian-camargo-firebase-adminsdk-4j5ma-175f2ec7b8.json
