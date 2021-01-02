@@ -17,7 +17,7 @@ const events = (req, res) => {
 
     dataAccess.addEventToFireStore(cleanEvent)
               .then(dbRes => res.json({ status: 'Success', docId: dbRes.id }))
-              .catch(error => res.json({ status: 'Error', error: error}))
+              .catch(error => res.status(500).json({ status: 'Error', error: error}))
 };
 
 module.exports = {
