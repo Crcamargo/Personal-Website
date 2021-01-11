@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Photo from '../assets/photo.jpg'
-import Resume from '../Temp.pdf'
+import Photo from '../assets/photo_skinny.jpg'
+import Resume from '../Resume.pdf'
 import { connect } from 'react-redux'
 import { pageClick } from '../redux/actions'
 import { useLocation, Link } from 'react-router-dom'
@@ -12,8 +12,6 @@ import AboutSection from './AboutSection'
 /* <button onClick={() => store.dispatch(setPrimaryColor("#BA5B50"))}>Red</button>
         <button onClick={() => store.dispatch(setPrimaryColor("#435892"))}>Blue</button>
         <button onClick={() => store.dispatch(setPrimaryColor("#8DA077"))}>Green</button> */
-
-//const isMobile = () => window.matchMedia('(max-width: 769px)').matches
 
 const Home = ({ pageClick }) => {
   const checkWindowSize = () => window.matchMedia('(max-width: 769px)').matches

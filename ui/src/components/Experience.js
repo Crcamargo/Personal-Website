@@ -24,7 +24,7 @@ export default () => {
         position="right"
         date="Sep 2018 - Present">
           <div className="experience-element-title" onClick={() => setCurr(0)}>
-            <h3 className="vertical-timeline-element-title">Software Engineer (AI/ML)</h3>
+            <h3 className="vertical-timeline-element-title">Software Engineer</h3>
             <h4 className="vertical-timeline-element-subtitle">Seismic</h4>
           </div>
           {
@@ -32,28 +32,21 @@ export default () => {
               (<div className="vertical-timeline-bullets">
                 <ul>
                   <li>
-                    AI/ML Team
-                    <ul>
-                      <li>
-                      Enabled data scientists to quickly go from scratch research note-book work to deployable, production level code.
-                      </li>
-                      <li>
-                        Developed streaming and batch processing systems to provide data for analysis.
-                      </li>
-                      <li>
-                        Created Seismic's internal A/B Testing Experimental Framework.
-                      </li>
-                      <li>
-                        Developed production content recommendation system. Worked with data scientists to create
-                        recommenders such as 'Popular' and 'Engaging' content.
-                      </li>
-                    </ul>
+                    Worked with the Data and Analytics Team to develop streaming and batch processing data systems in .Net
+                    that wrote data to MSSQL and Snowflake Data Warehouse to make data available for machine learning and analytics.
                   </li>
                   <li>
-                    CRM Services Team
-                    <ul>
-                      <li>First</li>
-                    </ul>
+                    Productionized data scientists’ work by: refactoring Python code into deployable packages; integrating
+                    existing Kubernetes hosted docker containers into fully automated CI/CD Jenkins pipelines; and establishing
+                    security, logging, and alerting best practices in the AI/ML teams microservices.
+                  </li>
+                  <li>
+                    Created Seismic’s internal A/B testing experiment framework using .Net REST APIs and PostgreSQL, and
+                    was responsible for Seismic’s first production homepage A/B testing.
+                  </li>
+                  <li>
+                    Worked on the CRM Services team to refactor Seismic’s legacy, monolith, Predictive Content Application
+                    into a microservice which was 10x faster than the original.
                   </li>
                 </ul>
               </div>) : null
@@ -76,13 +69,13 @@ export default () => {
               (<div className="vertical-timeline-bullets">
                 <ul>
                   <li>
-                    Built a full stack web application in React and Node which acted as a internal DevOps
-                    dashboard. The dashboard provided insights such as pipeline health and lead time for
-                    customer bugs.
+                    Built a full stack web application in React and Node.js that acted as an internal DevOps dashboard.
+                    The dashboard provided insights, such as lead time for customer bugs and a high level overview of
+                    Jenkins pipeline health.
                   </li>
                   <li>
-                    Assisted the QA team to build out a new testing automation framework written in Robot that
-                    was fully integrated into our CICD Jenkins Pipelines.
+                    Assisted the QA team in building out a new testing automation framework written in Robot that
+                    was fully integrated into our CICD Jenkins pipelines.
                   </li>
                 </ul>
               </div>) : null
@@ -96,10 +89,24 @@ export default () => {
         icon={<Coffee />}
         position="right"
         date="Jun 2017 - Sep 2017">
-          <div className="experience-element-title">
+          <div className="experience-element-title" onClick={() => setCurr(2)}>
             <h3 className="vertical-timeline-element-title">QA Engineer Intern</h3>
             <h4 className="vertical-timeline-element-subtitle">BrightSign LLC</h4>
           </div>
+          {
+            shouldShowContent(2) ?
+              (<div className="vertical-timeline-bullets">
+                <ul>
+                  <li>
+                    Designed and created a windows program in C++ to send and receive commands to an HDMI protocol
+                    analyzer to automate video testing.
+                  </li>
+                  <li>
+                    Oversaw and documented HDCP compliance testing for BrightSign players.
+                  </li>
+                </ul>
+              </div>) : null
+          }
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="experience-timeline-element"
@@ -109,10 +116,26 @@ export default () => {
         icon={<Tool />}
         position="right"
         date="Aug 2015 - May 2018">
-          <div className="experience-element-title">
+          <div className="experience-element-title" onClick={() => setCurr(3)}>
             <h3 className="vertical-timeline-element-title">Online Course Builder</h3>
             <h4 className="vertical-timeline-element-subtitle">UC San Diego Extension</h4>
           </div>
+          {
+            shouldShowContent(3) ?
+              (<div className="vertical-timeline-bullets">
+                <ul>
+                  <li>
+                    Provided technical support for the UCSD Extension Online Learning department.
+                  </li>
+                  <li>
+                    Worked with professors to publish lectures for online use.
+                  </li>
+                  <li>
+                    Assisted students with computer-based and online support inquiries.
+                  </li>
+                </ul>
+              </div>) : null
+          }
       </VerticalTimelineElement>
     </VerticalTimeline>
   </div>

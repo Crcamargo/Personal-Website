@@ -2,11 +2,13 @@
 
 ## Overview
 
+Hosted at: https://cristian-camargo.web.app/
+
 This webapp was created to showcase my personal goals and projects while also being a fun web application that I can use as a sandbox where I can practice implementing new ideas.
 
 ## UI
 
-The UI is built using React and uses Redux for state management. It POST's user activity events to the backend Node server. It connects to a read-only Firestore DB where it reads web application analytics data such as page views and resume downloads (more complex analytics is a next step)
+The UI is built using React and uses Redux for state management. It POSTs user activity events to the backend Node server. It connects to a read-only Firestore DB where it reads web application analytics data such as page views and resume downloads (more complex analytics is a next step)
 
 ## Function
 

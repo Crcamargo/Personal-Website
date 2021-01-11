@@ -7,8 +7,7 @@ import DisneyImage from '../assets/plan_gen.png'
 import VrLogo from '../assets/vrcane.jpg'
 import VrImage from '../assets/vrcane.PNG'
 import WebLogo from '../assets/react.png'
-import WebImage from '../assets/vscode.PNG'
-import FitImage from '../assets/fit2.png'
+import WebImage from '../assets/website.png'
 
 import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 
@@ -21,30 +20,21 @@ const projects = [
     imageOrientation: 'horizontal',
     bullets: [
       "This website was built using React and Redux (You can check the console for state updates)!",
-      "Page clicks and views are being tracked and sent to back end for analytics. (WIP)",
-      "A/B testing on website color schemes. (WIP)"
+      "Page views, clicks and resume downloads are being tracked and sent to back end for analytics.",
+      "This website is being powered by a Google Cloud Function, written in Node.Js."
     ]
   },
-  // {
-  //   name: "FellowshipIt (WIP)",
-  //   logo: WebLogo,
-  //   image: FitImage,
-  //   imageOrientation: 'horizontal',
-  //   bullets: [
-  //     "Creating a faith based app that allows small groups to better connect.",
-  //     "App built in React Native with Firebase as its data store.",
-  //     "Backend written in C#/.NET to controll permissions, data retrieval, and search."
-  //   ]
-  // },
   {
     name: "Smart Park Disney",
+    url: "https://github.com/Crcamargo/SmartParkDisney/blob/master/app/src/main/java/com/themparksdetermined/smartparkdisney/View/SmartPlanFragment.java",
+    urlText: "https://github.com/Crcamargo/SmartParkDisney",
     logo: DisneyLogo,
     image: DisneyImage,
     imageOrientation: 'vertical',
     bullets: [
-      "Individually developed an Android App that was available on the play store.",
-      `Used Firebase and Google Directions API to design the Smart Plan feature which generates an optimized plan using
-      fast passes, ride wait times, average wait times, and location.`
+      "Individually developed an Android app, using Java, that streamlines wait times and park info for Disneyland.",
+      `Used Firebase and Google Directions API to design a Smart Plan feature. The Smart Plan feature allows a user
+       to select their favorite rides and then generates an optimized plan using fast pass, ride wait time, average wait time, and location data.`
     ],
   },
   {
@@ -61,6 +51,7 @@ const projects = [
   {
     name: "VRcane",
     logo: VrLogo,
+    url: "https://youtu.be/1d2FRqKNIU0",
     image: VrImage,
     imageOrientation: 'horizontal',
     bullets: [
