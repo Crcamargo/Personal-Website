@@ -41,6 +41,13 @@ h1 {
     margin-bottom: 0;
 }
 
+.about-photo-small {
+    height: 20vh;
+    margin-top: 3%;
+    margin-left: 3%;
+    border-radius: 50%;
+}
+
 .about-me {
     margin: 0;
     margin-bottom: .5em;

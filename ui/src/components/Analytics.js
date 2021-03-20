@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { PieChart, Pie, Cell, Tooltip } from 'recharts'
+import { PieChart, Pie, Cell, Tooltip, LineChart, XAxis, YAxis, Line, Legend } from 'recharts'
 import { connect } from 'react-redux'
 import { firebase } from '@firebase/app'
 
@@ -17,24 +17,25 @@ const shardsDocumentId = 'FhstJMJq47MCjYVAZVOc'
 const COLORS = ['#BA5B50', '#415a77', '#546E7A', '#757575'];
 const renderLabel = entry => entry.name
 
-function getDistribution(data, dataKey) {
-  let dist = {}
+function getName(obj, path) {
+  let keys = path.split(".")
+  keys.forEach(key => {obj = obj[key]})
+  return obj
+}
 
+function getDistribution(data, dataKeyPath) {
+  let distribution = {}
   data.forEach(d => {
-    let name = d.browser[dataKey]
-
-    if (!dist[name]) {
-      dist[name] = {
-        name,
-        value: 1
-      }
+    let name = getName(d, dataKeyPath)
+    if (!distribution[name]) {
+      distribution[name] = { name, value: 1 }
     }
     else {
-      dist[name].value += 1
+      distribution[name].value += 1
     }
   })
 
-  return Object.keys(dist).map(k => dist[k])
+  return Object.keys(distribution).map(k => distribution[k])
 }
 
 const Analytics = ({ navigationClicks }) => {
@@ -42,6 +43,7 @@ const Analytics = ({ navigationClicks }) => {
   const [totalResumeDownloads, setTotalResumeDownloads] = useState(0)
   const [browserDistribution, setBrowserDist] = useState([])
   const [osDistribution, setOsDist] = useState([])
+  const [latestViews, setLatestViews] = useState([])
 
   useEffect(() => {
     db.collection('analytics').doc(shardsDocumentId).collection('shards').onSnapshot(c => {
@@ -60,11 +62,25 @@ const Analytics = ({ navigationClicks }) => {
 
     db.collection('events').doc('raw').collection('views').onSnapshot(c => {
       let data = c.docs.map(doc => doc.data())
-
-      setBrowserDist(getDistribution(data, 'name'))
-      setOsDist(getDistribution(data, 'os'))
+      setBrowserDist(getDistribution(data, 'browser.name'))
+      setOsDist(getDistribution(data, 'browser.os'))
     })
+
+    db.collection('events').doc('raw').collection('views').orderBy('occurredAt').get()
+      .then (querySnapshot => {
+        const occurredAtToMonth = data => new Date(data["occurredAt"]).toLocaleString('default', {month: 'long'})
+        let data = querySnapshot.docs.map(doc => ({month: occurredAtToMonth(doc.data())}))
+        setLatestViews(getDistribution(data, 'month'))
+    })
+    .catch(error => console.log(error))
   }, [])
+
+  let navigationClicksElements = navigationClicks.map((val, i) =>
+    <tr key={i}>
+      <td>{val.itemClicked}</td>
+      <td>{val.occurredAt.toString()}</td>
+    </tr>
+  )
 
   return(
     <div className="analytics-container">
@@ -75,6 +91,15 @@ const Analytics = ({ navigationClicks }) => {
       <div className="analytics-metric-container">
         <span className="analytics-metric-title">Total Resume Downloads</span>
         <span className="analytics-metric">{totalResumeDownloads}</span>
+      </div>
+      <div className="analytics-metric-container">
+        <span className="analytics-metric-title">Page Visits</span>
+        <LineChart width={1000} height={250} data={latestViews}>
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="value" stroke={COLORS[0]} />
+        </LineChart>
       </div>
       <div className="analytics-metric-container">
         <span className="analytics-metric-title">Browser Distribution</span>
@@ -99,19 +124,10 @@ const Analytics = ({ navigationClicks }) => {
         <table>
           <tr>
             <th>Button Clicked</th>
-            <th>Occured At</th>
+            <th>Occurred At</th>
           </tr>
           <tbody>
-          {
-            navigationClicks.map((val, i) => {
-              return (
-                <tr key={i}>
-                  <td>{val.itemClicked}</td>
-                  <td>{val.occurredAt.toString()}</td>
-                </tr>
-              )
-            })
-          }
+            {navigationClicksElements}
           </tbody>
         </table>
       </div>
