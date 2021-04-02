@@ -2,8 +2,9 @@ import React from 'react'
 import ResumeButton from './ResumeButton'
 import NavBarContact from './NavBarContact'
 import Photo from '../assets/photo-small.jpg'
+import { connect } from 'react-redux'
 
-export default ({ isMobile, downloadResume}) => (
+const AboutSection = ({ isMobile, downloadResume}) => (
     <div className="home-about-container">
           {!isMobile ? null : <img className="about-photo-small" src={Photo} />}
           <h1 className="about-me">About Me</h1>
@@ -24,3 +25,6 @@ export default ({ isMobile, downloadResume}) => (
           {!isMobile ? null : <NavBarContact />}
     </div>
 )
+
+const mapStateToProps = state => ({ isMobile: state.isMobile })
+export default connect(mapStateToProps)(AboutSection)

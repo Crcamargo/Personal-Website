@@ -13,26 +13,19 @@ import AboutSection from './AboutSection'
         <button onClick={() => store.dispatch(setPrimaryColor("#435892"))}>Blue</button>
         <button onClick={() => store.dispatch(setPrimaryColor("#8DA077"))}>Green</button> */
 
-const Home = ({ pageClick }) => {
-  const checkWindowSize = () => window.matchMedia('(max-width: 769px)').matches
-  const [isMobile, updateIsMobile] = useState(checkWindowSize)
-
-  window.addEventListener('resize', () => updateIsMobile(checkWindowSize))
-
+const Home = ({ pageClick, isMobile }) => {
   const downloadResume = () => {
     pageClick('resume')
-
     let a = document.createElement('a')
     a.href = Resume
     a.target ="_blank"
     a.click()
   }
 
-  const aboutComponent = <AboutSection isMobile={isMobile} downloadResume={downloadResume} />
-
-  const mainComponent = useLocation().pathname === "/about" ? aboutComponent : (
+  const showAbout = useLocation().pathname === "/about" || isMobile
+  const aboutComponent = <AboutSection downloadResume={downloadResume} />
+  const resumeComponent = (
     <div className="home-text-container">
-      { !isMobile? null : <Redirect to="about" /> }
       <div className="home-text-text-container">
         <h1 className="hello">Hello, my name is <span className="primary-color">Cristian</span>!</h1>
         <h2>I am a <span className="primary-color">Software Engineer</span>.</h2>
@@ -43,13 +36,12 @@ const Home = ({ pageClick }) => {
 
   return (
     <div className="home-container">
-      { mainComponent }
+      { showAbout ? aboutComponent : resumeComponent }
       <img className='home-photo' src={Photo} />
     </div>
 )}
 
-const mapDispatchToProps = {
-  pageClick
-}
+const mapDispatchToProps = { pageClick }
+const mapStateToProps = (state) => ({ isMobile: state.isMobile })
 
-export default connect(null, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Home from './Home'
 import Experience from './Experience'
 import Projects from './Projects'
 import Analytics from './Analytics'
 import { Switch, Route } from   'react-router-dom'
+import { connect } from 'react-redux'
+import { setIsMobile } from '../redux/actions'
 
-export default () => {
+const Main = ({ setIsMobile }) => {
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.matchMedia('(max-width:769px)').matches)
+    window.addEventListener('resize', updateIsMobile)
+    return () => window.removeEventListener('resize', updateIsMobile)
+  }, [])
+
   return(
     <div className='main-container'>
       <Switch>
@@ -25,3 +33,6 @@ export default () => {
     </div>
   )
 }
+
+const mapDispatchToProps = { setIsMobile }
+export default connect(null, mapDispatchToProps)(Main)

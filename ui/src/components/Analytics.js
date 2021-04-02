@@ -135,10 +135,10 @@ const Analytics = ({ navigationClicks }) => {
 )}
 
 const mapStateToProps = (state) => {
-  let end = state.events.clicks.length
+  let end = state.clicks.length
   let start = Math.max(0, end - maxNavRows)
 
-  const navigationClicks = state.events.clicks.slice(start, end)
+  const navigationClicks = state.clicks.slice(start, end)
 
   return {
     navigationClicks,

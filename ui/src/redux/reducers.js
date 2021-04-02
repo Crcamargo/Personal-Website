@@ -1,32 +1,26 @@
 import {
-  SET_PRIMARY_COLOR, PAGE_VIEW, PAGE_CLICK
+  SET_PRIMARY_COLOR, PAGE_VIEW, PAGE_CLICK, SET_IS_MOBILE
 } from './actions'
-
-import { combineReducers } from 'redux'
 
 const defaultState = {
   color: "#435892",
+  views: [],
+  clicks: [],
+  isMobile: window.matchMedia('(max-width: 769px)').matches
 }
 
-export const stateReducer = (state = defaultState, action) => {
+export default (state = defaultState, action) => {
   switch (action.type) {
     case SET_PRIMARY_COLOR:
       return {
         ...state,
         color: action.color
       }
-    default:
-      return state
-  }
-}
-
-const defaultEvents = {
-  views: [],
-  clicks: []
-}
-
-export const eventReducer = (state = defaultEvents, action) => {
-  switch (action.type) {
+    case SET_IS_MOBILE:
+      return {
+        ...state,
+        isMobile: action.isMobile
+      }
     case PAGE_VIEW:
       return {
         ...state,
@@ -47,8 +41,3 @@ export const eventReducer = (state = defaultEvents, action) => {
       return state
   }
 }
-
-export default combineReducers({
-  current: stateReducer,
-  events: eventReducer
-})

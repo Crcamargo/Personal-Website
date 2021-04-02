@@ -33,7 +33,6 @@ export const NavItem = ({ Icon, text, clickEvent, type, route }) => (
 const greetingProps = (state) => ({
   Icon: Home,
   text: 'Home',
-  isActive: state.current.tab === 'greeting',
   type: 'greeting',
   route: '/'
 })
@@ -45,7 +44,6 @@ const greetingDispatch = {
 const experienceProps = (state) => ({
   Icon: Clock,
   text: 'Experience',
-  isActive: state.current.tab === 'experience',
   type: 'experience',
   route: '/experience'
 })
@@ -57,7 +55,6 @@ const experienceDispatch = {
 const projectsProps = (state) => ({
   Icon: GitMerge,
   text: 'Projects',
-  isActive: state.current.tab === 'projects',
   type: 'projects',
   route: '/projects'
 })
@@ -69,7 +66,6 @@ const projectsDispatch = {
 const analyticsProps = (state) => ({
   Icon: PieChart,
   text: 'Analytics',
-  isActive: state.current.tab === 'analytics',
   type: 'analytics',
   route: '/analytics'
 })
